@@ -33,11 +33,13 @@
         <header class="o-row o-row--nav">
             <div class="o-container">
                 <div class="c-header">
-                    <div class="c-header__logo">
-                        <h1 class="c-logo">
-                            <img class="c-logo__symbol" src="./img/svg/MarvelLogo.svg" alt="Marvel Logo" height="52">
-                        </h1>
-                    </div>
+                    <a href="./index.html">
+                        <div class="c-header__logo">
+                            <h1 class="c-logo">
+                                <img class="c-logo__symbol" src="./img/svg/MarvelLogo.svg" alt="Marvel Logo" height="52">
+                            </h1>
+                        </div>
+                    </a>
                     
                     <p class="c-header__cta">
                         <a href="./app.html" class="c-link-cta">Launch App</a>
@@ -55,53 +57,55 @@
                 <div class="o-container u-max-width-lg">
                     <article class="o-section o-section--xl">
                         <div class="o-layout o-layout--gutter-xl o-layout--justify-center o-layout--align-center  o-layout--row-reverse">
-                            <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
-                                <figure class="u-mb-lg">
-                                    <picture>
-                                        <!-- <source srcset="img/png/social-mobile@3x.png" media="(min-width: 992px)"> -->
-                                        <!-- <source srcset="img/png/social-mobile@2x.png" media="(min-width: 576px)"> -->
-                                        <img src="img/png/social-mobile.png" alt="Social Mobile">
-                                    </picture>
-                                </figure>
-                            </div>
-                            <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
-                                <div class="u-max-width-sm">
-                                    <h2>
-                                        MARVEL SEARCH
-                                    </h2>
-                                    <p class="c-lead c-lead--md u-color-neutral-base">
-                                        Marvel Search is a web app that gives you acces to search for many different Marvel resources.
-                                        Using Marvel's Official API you can search for Comic books, series, characters and more. 
-                                        If you would like to stay up to date on our progress you can subscribe to our newsletter!
-                                    </p>
-                                    <p>
-                                        <form class="c-card" action="#">
-                                            <div class="c-form-field js-email-field">
-                                                <label class="c-label js-email-label" for="username">
-                                                    Email address
-                                                    <span class="c-label__error-message js-email-error-message">
-                                                        This field is required
-                                                    </span>
-                                                </label>
-                                                
-                                                <div class="c-form-sideways">
-                                                    <div class="c-form-sideways__item c-form-sideways__item1">
-                                                        <input class="c-input js-email-input" type="email" name="username" id="username" placeholder="e.g. john@doe.com" required>
-                                                    </div>
-                                                    <div class="c-form-sideways__item">
-                                                        <button class="o-button-reset c-link-cta  js-sign-in-button">
-                                                        Join!
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                
-                                                
-                                            </div>
-                                            
-                                        </form>
-
-                                        
-                                    </p>
+                            <div class="c-card">
+                                <div class="c-card__header">
+                                    <h2 class="c-card__title">Bezoekers per dag</h2>
+                                    <span class="c-custom-select">
+                                        <select class="c-input c-custom-select__input js-day-select" name="select1" id="select1">
+                                            <option value="spider-man"      >Spider-Man</option>
+                                            <option value="captain america" >Captain America</option>
+                                            <option value="black widow"     >Black Widow</option>
+                                            <option value="iron man"        >Iron Man</option>
+                                            <option value="thor"            >Thor</option>
+                                            <option value="captain marvel"  >Captain Marvel</option>
+                                            <option value="Hulk"            >Hulk</option>
+                                            <option value="hawkeye"         >Hawkeye</option>
+                                            <option value="ant-man"         >Ant-Man</option>
+                                            <option value="falcon"          >Falcon</option>
+                                            <option value="winter soldier"  >Winter Soldier</option>
+                                            <option value="war machine"     >War Machine</option>
+                                            <option value="vision"          >Vision</option>
+                                            <option value="scarlet witch"   >Scarlet Witch</option>
+                                            <option value="doctor strange"  >Doctor Strange</option>
+                                            <option value="black panther"   >Black Panther</option>
+                                            <option value="thanos"          >Thanos</option>
+                                            <option value="star lord"       >Star Lord</option>
+                                            <option value="gamora"          >Gamora</option>
+                                            <option value="groot"           >Groot</option>
+                                        </select>
+                                        <svg class="c-custom-select__symbol" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M7,10l5,5,5-5Z"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="c-card__body">
+                                    <canvas class="js-graph" width="3" height="1"></canvas>
+                                    <!-- <div class="c-legends u-mb-md">
+                                        <div class="c-legend">
+                                            <div class="c-legend__symbol c-legend__symbol--line c-legend__symbol--bg-alpha"></div>
+                                            Products sold
+                                        </div>
+                                        <div class="c-legend">
+                                            <div class="c-legend__symbol c-legend__symbol--line c-legend__symbol--bg-neutral-xx-light"></div>
+                                            Total views
+                                        </div>
+                                    </div> -->
+                                    <aside class="c-load-container js-load-container">
+                                        <!-- <p>Loading...</p> -->
+                                        <svg class="c-loader js-loader" viewbox="0 0 50 50">
+                                            <circle class="c-loader__circle"></circle>
+                                        </svg>
+                                    </aside>
                                 </div>
                             </div>
                         </div>

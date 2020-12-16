@@ -83,7 +83,7 @@
     --global-input-focus-boxShadowSpread: 0 0 0 3px;
     --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
     --global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
-    --card-backgroundColor: var(--global-color-neutral-xxxx-dark);
+    --card-backgroundColor: var(--global-color-neutral-xxx-dark);
     
     --global-btn-color-light: #E62429;
     --global-btn-color-dark: #9F0013;
