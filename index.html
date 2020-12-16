@@ -27,10 +27,11 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/screen.css">
 
+        <script defer src="./script/validation.js"></script>
         <script src="./script/app.js"></script>
     </head>
     <body>
-        <header class="o-row">
+        <header class="o-row o-row--nav">
             <div class="o-container">
                 <div class="c-header">
                     <div class="c-header__logo">
@@ -58,8 +59,8 @@
                             <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
                                 <figure class="u-mb-lg">
                                     <picture>
-                                        <source srcset="img/png/social-mobile@3x.png" media="(min-width: 992px)">
-                                        <source srcset="img/png/social-mobile@2x.png" media="(min-width: 576px)">
+                                        <!-- <source srcset="img/png/social-mobile@3x.png" media="(min-width: 992px)"> -->
+                                        <!-- <source srcset="img/png/social-mobile@2x.png" media="(min-width: 576px)"> -->
                                         <img src="img/png/social-mobile.png" alt="Social Mobile">
                                     </picture>
                                 </figure>
@@ -67,10 +68,40 @@
                             <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
                                 <div class="u-max-width-sm">
                                     <h2>
-                                        Social Trading
+                                        MARVEL SEARCH
                                     </h2>
                                     <p class="c-lead c-lead--md u-color-neutral-base">
-                                        Blockport creates a micro-economy where members can use BPT to follow or copy other members’ portfolios. Beginners can learn from experienced traders and experienced traders earn BPT in reward by sharing their strategies.
+                                        Marvel Search is a web app that gives you acces to search for many different Marvel resources.
+                                        Using Marvel's Official API you can search for Comic books, series, characters and more. 
+                                        If you would like to stay up to date on our progress you can subscribe to our newsletter!
+                                    </p>
+                                    <p>
+                                        <form class="c-card" action="#">
+                                            <div class="c-form-field js-email-field">
+                                                <label class="c-label js-email-label" for="username">
+                                                    Email address
+                                                    <span class="c-label__error-message js-email-error-message">
+                                                        This field is required
+                                                    </span>
+                                                </label>
+                                                
+                                                <div class="c-form-sideways">
+                                                    <div class="c-form-sideways__item c-form-sideways__item1">
+                                                        <input class="c-input js-email-input" type="email" name="username" id="username" placeholder="e.g. john@doe.com" required>
+                                                    </div>
+                                                    <div class="c-form-sideways__item">
+                                                        <button class="o-button-reset c-link-cta  js-sign-in-button">
+                                                        Join!
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                            </div>
+                                            
+                                        </form>
+
+                                        
                                     </p>
                                 </div>
                             </div>

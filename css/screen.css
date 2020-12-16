@@ -1,8 +1,9 @@
 /*------------------------------------*\
 #FONTS
 \*------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
 
-@font-face {
+/* @font-face {
     font-family: "Inter Web";
     font-weight: 400;
     src: url("../fonts/Inter-Regular.woff2") format("woff2")
@@ -12,7 +13,7 @@
     font-family: "Inter Web";
     font-weight: 600;
     src: url("../fonts/Inter-SemiBold.woff2") format("woff2")
-}
+} */
 
 /*------------------------------------*\
 #Variables
@@ -21,30 +22,30 @@
 :root {
     /* Global colors */
     --global-color-alpha-light: #4F95FF;
-    --global-color-alpha: #3385FF;
+    --global-color-alpha: #E62429;
     --global-color-alpha-dark: #2E77E6;
-    --global-color-alpha-x-dark: #1B4186;
-    --global-color-alpha-transparent: #3385ffbf;
-    --global-color-alpha-x-transparent: #3385ff4d;
+    --global-color-alpha-x-dark: #9F0013;
+    --global-color-alpha-transparent: #9F0013bf;
+    --global-color-alpha-x-transparent: #9F00134d;
 
     --global-color-neutral-xxxx-light: #F5F6FA;
     --global-color-neutral-xxx-light: #E2E3E7;
     --global-color-neutral-xx-light: #caccd4;
-    --global-color-neutral-x-light: #b5b6c0;
-    --global-color-neutral-light: #a0a1ad;
-    --global-color-neutral: #8b8c9a;
+    --global-color-neutral-x-light: #c0c0c0;
+    --global-color-neutral-light: #9f9fa1;
+    --global-color-neutral: #8a7c7c;
     --global-color-neutral-dark: #757787;
-    --global-color-neutral-x-dark: #606274;
-    --global-color-neutral-xx-dark: #4b4c60;
-    --global-color-neutral-xxx-dark: #35374d;
-    --global-color-neutral-xxxx-dark: #20223a;
-    --global-color-error: #FF3333;
+    --global-color-neutral-x-dark: #5a5a5a;
+    --global-color-neutral-xx-dark: #3a3a3a;
+    --global-color-neutral-xxx-dark: #202020;
+    --global-color-neutral-xxxx-dark: #151515;
+    --global-color-error: #f15729;
     --global-color-error-transparent: #FF3333bf;
     --global-color-error-x-transparent: #FF33334d;
 
     /* global page settings */
-    --global-page-color: var(--global-color-neutral-xxxx-dark);
-    --global-page-backgroundColor: var(--global-color-neutral-xxxx-light);
+    --global-page-color: var(--global-color-neutral-xxxx-light);
+    --global-page-backgroundColor: var(--global-color-neutral-xxxx-dark);
     --global-selection-backgroundColor: var(--global-color-alpha);
 
     /* border radius */
@@ -71,10 +72,10 @@
     --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
 
     /* forms */
-    --global-label-color: var(--global-color-neutral-xx-dark);
+    --global-label-color: var(--global-color-neutral-xx-light);
     --global-placeholder-color: var(--global-color-neutral-x-light);
-    --global-input-backgroundColor: White;
-    --global-input-color: var(--global-color-neutral-xxxx-dark);
+    --global-input-backgroundColor: var(--global-color-neutral-xxx-dark);
+    --global-input-color: var(--global-color-neutral-xxxx-light);
     --global-input-borderColor: var(--global-color-neutral-xxx-light);
     --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
     --global-input-focus-borderColor: var(--global-color-alpha);
@@ -82,9 +83,13 @@
     --global-input-focus-boxShadowSpread: 0 0 0 3px;
     --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
     --global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
+    --card-backgroundColor: var(--global-color-neutral-xxxx-dark);
+    
+    --global-btn-color-light: #E62429;
+    --global-btn-color-dark: #9F0013;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: NOG TE VERANDEREN) {
     :root {
         --global-page-color: White;
         --global-page-backgroundColor: var(--global-color-neutral-xxxx-dark);
@@ -116,7 +121,7 @@ html {
     color: var(--global-page-color);
     font-size: 16px;
     line-height: 1.5;
-    font-family: "Inter Web", Helvetica, arial, sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -298,6 +303,10 @@ input::placeholder {
 .o-row {
     position: relative;
     padding: 24px 24px 0;
+}
+
+.o-row--nav {
+    background-color: var(--global-color-neutral-xxx-dark);
 }
 
 .o-row--login {
@@ -623,25 +632,76 @@ input::placeholder {
     height: 180%;
 }
 
-.c-logo__path--1 {
-    fill: var(--logo__path--1--fill, var(--global-color-neutral-xxxx-dark));
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+
+.c-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.c-logo__path--2 {
-    fill: var(--logo__path--2--fill, var(--global-color-alpha));
+.c-header__nav,
+.c-header__cta {
+    display: block;
 }
 
-.c-logo__path--3 {
-    fill: var(--logo__path--3--fill, var(--global-color-alpha-x-dark));
+.c-header__nav {
+    margin-right: 20px;
+    
+    /* solution 1 */
+    /* margin-left: auto; */
+
+    /* solution 2 */
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;        
 }
 
-@media (prefers-color-scheme: dark) {
-    .c-logo {
-        --logo__path--1--fill: White;
-        --logo__path--2--fill: var(--logo__path--1--fill);
-        --logo__path--3--fill: var(--logo__path--1--fill);
-    }
+/* ----------------------------------------------------------- */
+/*
+    Component: CTA link
+    ---
+    Small cta link with custom animation
+*/
+
+.c-link-cta {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background: var(--global-btn-color-light);
 }
+
+.c-link-cta,
+.c-link-cta:visited,
+.c-link-cta:active {
+    color: #fff;
+}
+
+.c-link-cta:hover,
+.c-link-cta:focus {
+    color: #fff;
+    background: var(--global-btn-color-dark);
+}
+
+.c-link-cta:active {
+    background-color: var(--global-btn-color-light);
+}
+
+.c-link-cta--lg {
+    font-size: 16px;
+    padding: 16px 32px;
+}
+/* ----------------------------------------------------------- */
 
 /*
     Component: Card
@@ -695,9 +755,9 @@ input::placeholder {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: NEED CHANGING) {
     .c-card {
-        --card-backgroundColor: var(--global-color-neutral-xxx-dark);
+        --card-backgroundColor: var(--global-color-neutral-xxxx-dark);
         --card__footer-borderColor: var(--global-color-neutral-xxxx-dark);
     }
 }
@@ -707,6 +767,9 @@ input::placeholder {
     ---
     Everything form related here
 */
+.c-form-sideways__item1 {
+    margin-bottom: 10px;
+}
 
 .c-form-field {
     position: relative;
@@ -717,6 +780,18 @@ input::placeholder {
     align-items: center;
 }
 
+@media (min-width: 768px) {
+    .c-form--sideways {
+        display: flex;
+    }
+    
+    .c-form-sideways__item{
+        display: inline-block;
+    }
+    .c-form-sideways__item1{
+        width: 83.7%;
+    }
+}
 /*
     Component: Input
     ---
@@ -739,6 +814,9 @@ input::placeholder {
     padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md);
     outline: none;
     transition: var(--input-transition);
+}
+.c-input--short{
+    width: 60%;
 }
 
 .c-input:hover {
@@ -1312,7 +1390,7 @@ more padding on the right to avoid overlap
 
 */
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: sdfsdf) {
     .c-tent {
         --tent-backgroundColor: var(--global-color-neutral-xxx-dark);
         --tent__content-color: var(--global-color-neutral-light);

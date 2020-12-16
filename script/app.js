@@ -4,7 +4,7 @@ const PRIV_KEY = '45d66de33de2eb1f17caf74bb1658c215d734dfb';
 	
 // 3 Met de data van de API kunnen we de app opvullen
 let showResult = queryResponse => {
-	console.log('ShowResult');
+	//console.log('ShowResult');
 	
 };
 
@@ -23,7 +23,6 @@ let getData = async (apiUrl) => {
 	// opbouwen van de url
 	let ENDPOINT = `https://gateway.marvel.com/v1/public/characters`;
 	ENDPOINT = ENDPOINT + `?apikey=` + PUBLIC_KEY + `&ts=` + ts + `&hash=` + hash;
-	console.log('hoi')
 
 	// Met de fetch API proberen we de data op te halen.
 	const request = await fetch(`${ENDPOINT}`);
