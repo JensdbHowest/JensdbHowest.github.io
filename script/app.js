@@ -10,7 +10,7 @@ let showResult = queryResponse => {
 
 let getData = async (apiUrl) => {
 
-	console.log('in getData')
+	//console.log('in getData')
 
 	apiUrl = ""
 
