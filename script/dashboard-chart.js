@@ -102,6 +102,7 @@ const getData = (json) => {
 
 
 	let thumbnailUrl = json.thumbnail.path;
+	thumbnailUrl = thumbnailUrl.replace(`http://`, `https://`);
 	let thumbnailUrlS = thumbnailUrl + `/standard_xlarge.` + json.thumbnail.extension;
 	let thumbnailUrlL = thumbnailUrl + `/portrait_xlarge.` + json.thumbnail.extension;
 
