@@ -192,9 +192,10 @@ h2 {
 }
 
 h3 {
-    font-size: 26px;
+    font-size: 18px;
     line-height: calc(var(--global-baseline) * 4);
     margin: 0 0 var(--global-whitespace);
+    margin-bottom: 16px;
 }
 
 h4,
@@ -703,6 +704,34 @@ input::placeholder {
 }
 /* ----------------------------------------------------------- */
 
+
+/*
+    Component: Dashboard
+    ---
+    Dashboard component with CSS grid
+*/
+
+.c-dashboard {
+    display: grid;
+    grid-gap: var(--global-whitespace-lg);
+    margin-bottom: var(--global-whitespace-md);
+}
+
+.c-dashboard__item {
+    box-shadow: var(--global-box-shadow);
+    background-color: var(--global-color-neutral-xxxx-dark);
+}
+
+@media screen and (min-width: 62em) {
+    .c-dashboard {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .c-dashboard__item {
+        grid-column: 1 / -1;
+    }
+}
+
 /*
     Component: Card
     ---
@@ -716,6 +745,41 @@ input::placeholder {
     border-radius: var(--card-borderRadius, var(--global-borderRadius));
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
     overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.c-card__header {
+    padding: 16px 16px 16px 0;
+}
+
+.c-card__header-option {
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 0px;
+}
+
+.c-card__title {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    line-height: calc(var(--global-baseline) * 5);
+}
+
+
+@media screen and (min-width: 62em) {
+    .c-card__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 16px 16px 0;
+    }
+    .c-card__title {
+        margin-left: 32px;
+    }
+    .c-inline {
+        display: inline-block;
+    }
 }
 
 /* Add padding to child for more flexibility */
@@ -745,6 +809,25 @@ input::placeholder {
     margin-bottom: 0;
 }
 
+.c-card--hide {
+    visibility: hidden;
+}
+.c-card__character {
+    display: block;
+    text-align: center;
+}
+
+.c-card__character--photo {
+    width: 32vh;
+    padding-top: 16px;
+}
+
+.c-card__character--info {
+    padding-top: 32px;
+    width: 100%;
+    text-align: start;
+}
+
 @media (min-width: 27em) {
     .c-card__body {
         padding: var(--global-whitespace-xl);
@@ -752,6 +835,17 @@ input::placeholder {
 
     .c-card__title {
         margin-bottom: var(--global-whitespace-xl);
+    }
+
+    .c-card__character {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-right: 10vh;
+    }
+
+    .c-card__character--photo {
+        width: 25vh;
+        padding-top: 0px;
     }
 }
 
@@ -1169,6 +1263,10 @@ more padding on the right to avoid overlap
     position: relative;
 }
 
+.c-custom-select__input {
+    padding-right: calc(var(--global-baseline) * 5);
+}
+
 .c-custom-select__symbol {
     width: 24px;
     height: 24px;
@@ -1444,6 +1542,87 @@ more padding on the right to avoid overlap
     --input-hover-borderColor: var(--global-input-error-borderColor);
     --input-focus-borderColor: var(--global-input-error-borderColor);
     --input-focus-boxShadowColor: var(--global-input-error-boxShadowColor);
+}
+
+/*
+    Component: Loader
+    ---
+    Global loader component
+*/
+
+.c-load-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	min-height: 376px;
+
+}
+
+.c-loader {
+    /* // all metrics should be in px otherwise calc won't work for some reason. */
+    --loader-viewbox: 50px; /* this variable should be the same as the viewbox attribute in html. */
+    --loader__circle-stroke-width: 5px;
+    --loader__circle-center: calc(var(--loader-viewbox) / 2);
+    /* // The stroke is centered so we need to take that into account.
+    // Otherwise some parts would be outside of the viewbox */
+    --loader__circle-radius: calc(var(--loader-viewbox) / 2 - var(--loader__circle-stroke-width) / 2);
+    --loader__circle-circumference: calc(var(--loader__circle-radius) * 2 * var(--pi));
+    --loader__circle-gap: 20px;
+    --loader__circle-circumference-gap: calc(var(--loader__circle-circumference) - var(--loader__circle-gap));
+    --animation-duration: 1.5s;
+    width: var(--loader-viewbox);
+    height: var(--loader-viewbox);
+    transition: opacity var(--global-transition-beta);
+}
+
+.c-loader__circle {
+    stroke: var(--global-color-alpha);
+    fill: transparent;
+    stroke-linecap: round;
+    stroke-width: var(--loader__circle-stroke-width);
+    stroke-dasharray: var(--loader__circle-gap), var(--loader__circle-circumference-gap);
+    stroke-dashoffset: 0;
+    r: var(--loader__circle-radius);
+    cx: var(--loader__circle-center);
+    cy: var(--loader__circle-center);
+    animation: rotateCircle calc(var(--animation-duration) + 0.25s) linear infinite,
+    strokeCircle var(--animation-duration) infinite,
+    strokeColor calc(var(--animation-duration) * 5) calc(var(--animation-duration) / 2) infinite;
+    transform-origin: center;
+}
+
+@keyframes rotateCircle {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes strokeCircle {
+    50% {
+        stroke-dasharray: var(--loader__circle-circumference-gap), var(--loader__circle-gap);
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dasharray: var(--loader__circle-gap), var(--loader__circle-circumference-gap);
+        stroke-dashoffset: calc(var(--loader__circle-circumference) * -1);
+    }
+}
+
+@keyframes strokeColor {
+    20% {
+        stroke: gold;
+    }
+    40% {
+        stroke: LimeGreen;
+    }
+    60% {
+        stroke: DodgerBlue;
+    }
+    80% {
+        stroke: HotPink;
+    }
 }
 
 /*------------------------------------*\

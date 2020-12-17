@@ -19,15 +19,14 @@
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
-
-        <!-- <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2431_RC04/embed_loader.js"></script> -->
-        <!-- <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"Marvel","geo":"BE","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"geo=BE&q=Marvel&date=today 12-m","guestPath":"https://trends.google.com:443/trends/embed/"}); </script>  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
 
         <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/screen.css">
 
-        <script src="./script/app.js"></script>
+        <!-- <script src="./script/app.js"></script> -->
+        <script src="./script/dashboard-chart.js"></script>
     </head>
     <body>
         <header class="o-row o-row--nav">
@@ -41,9 +40,9 @@
                         </div>
                     </a>
                     
-                    <p class="c-header__cta">
+                    <!-- <p class="c-header__cta">
                         <a href="./app.html" class="c-link-cta">Launch App</a>
-                    </p>
+                    </p> -->
                 </div>
             </div>
         </header>
@@ -52,16 +51,17 @@
         <main class="c-app">
 
 
-            <!-- Landing Page Intro -->
-            <section class="o-row o-row--xl o-row--neutral-xx-dark">
+            <!-- Application -->
+            <section class="o-row">
                 <div class="o-container u-max-width-lg">
-                    <article class="o-section o-section--xl">
-                        <div class="o-layout o-layout--gutter-xl o-layout--justify-center o-layout--align-center  o-layout--row-reverse">
+                    <div class="c-dashboard">
+
+                        <div class="c-dashboard__item">
                             <div class="c-card">
                                 <div class="c-card__header">
-                                    <h2 class="c-card__title">Bezoekers per dag</h2>
+                                    <h2 class="c-card__title u-mb-clear">Aantal uitgaven per soort per karakter</h2>
                                     <span class="c-custom-select">
-                                        <select class="c-input c-custom-select__input js-day-select" name="select1" id="select1">
+                                        <select class="c-input c-custom-select__input js-character-select" name="select1" id="select1">
                                             <option value="spider-man"      >Spider-Man</option>
                                             <option value="captain america" >Captain America</option>
                                             <option value="black widow"     >Black Widow</option>
@@ -109,7 +109,48 @@
                                 </div>
                             </div>
                         </div>
-                    </article>
+
+                        <div class="c-dashboard__item">
+                            <div class="c-card u-mb-clear">
+                                <div class="c-card__header c-card__header-option">
+                                    <h2 class="c-card__title u-mb-clear">Weergeven van karakter info</h2>
+                                    <span class="">
+                                        <input class="o-hide-accessible c-option c-option--hidden js-character-checkbox" type="checkbox" id="toggle1">
+                                        <label class="c-label c-label--option c-custom-toggle" for="toggle1">
+                                            <span class="c-custom-toggle__fake-input">
+                                            </span>
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="c-dashboard__item c-card--hide js-card-hide">
+                            <div class="c-card">
+                                <!-- <div class="c-card__header">
+                                    <h2 class="c-card__title u-mb-clear">Info</h2>
+                                </div> -->
+                                <div class="c-card__body c-card__character">
+                                    
+                                        <picture>
+                                            <source class="js-character-photo-srcset" srcset="http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b/portrait_xlarge.jpg" media="(min-width: 576px)">
+                                            <img class="c-card__character--photo js-character-photo" src="http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b/standard_xlarge.jpg" alt="Character Picture">
+                                        </picture>
+                                    
+                                    <div class="c-card__character--info">
+                                        <h3 class="u-mb-clear">Naam: </h3>
+                                        <p class="js-character-name">Spider-Man</p>
+                                        <h3 class="u-mb-clear">Beschrijving: </h3>
+                                        <p class="js-character-summary">Bitten by a radioactive spider, high school student Peter Parker gained the speed, strength and powers of a spider. Adopting the name Spider-Man, Peter hoped to start a career using his new abilities. Taught that with great power comes great responsibility, Spidey has vowed to use his powers to help people.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+
+
+                    </div>
                 </div>
             </section>
             

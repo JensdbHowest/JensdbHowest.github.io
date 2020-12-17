@@ -1,11 +1,11 @@
-const PUBLIC_KEY = 'd43ff96121df0d5935afa22e9c8f51bb';
+const PUBLIC_KEY2 = 'd43ff96121df0d5935afa22e9c8f51bb';
 const PUBLIC_MIXKEY = '';
 const PRIV_KEY = '45d66de33de2eb1f17caf74bb1658c215d734dfb';
 
 
 
-const superHeroName = ["Spider-Man", "Captain America", "Black Widow", "Iron Man", "Thor", "Captain Marvel", "Hulk", "Hawkeye", "Ant-Man", "Falcon", "Winter Soldier", "War Machine", "Vision", "Scarlet Witch", "Doctor Strange", "Black Panther", "Thanos", "Star Lord", "Gamora", "Groot"];
-const superHeroId   = ["1009610", "1009220", "1009189", "1009368", "1009664", "1010338", "1009351", "1009338", "1010802", "1009297", "1010740", "1017322", "1009697", "1009562", "1009282", "1009187", "1009652", "1010733", "1010763", "1010743"];	
+const superHeroName1 = ["Spider-Man", "Captain America", "Black Widow", "Iron Man", "Thor", "Captain Marvel", "Hulk", "Hawkeye", "Ant-Man", "Falcon", "Winter Soldier", "War Machine", "Vision", "Scarlet Witch", "Doctor Strange", "Black Panther", "Thanos", "Star Lord", "Gamora", "Groot"];
+const superHeroId1   = ["1009610", "1009220", "1009189", "1009368", "1009664", "1010338", "1009351", "1009338", "1010802", "1009297", "1010740", "1017322", "1009697", "1009562", "1009282", "1009187", "1009652", "1010733", "1010763", "1010743"];	
 let superHeroComics   = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 // 3 Met de data van de API kunnen we de app opvullen
@@ -20,7 +20,7 @@ function findMentionsForCharacter() {
 	console.log('');
 }
 
-let getData = async (subjectUrl, parameterList = null) => {
+let getData1 = async (subjectUrl, parameterList = null) => {
 
 	console.log('in getData');
 
